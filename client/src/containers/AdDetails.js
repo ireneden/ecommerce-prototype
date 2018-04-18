@@ -1,13 +1,15 @@
-import React from 'react'
+import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 
-class AdDetails extends React.Component {
+
+class AdDetails extends PureComponent {
     render() {
+      const {ads} = this.props
       return (
-        <li>
-          {this.props.text}
-        </li>
-      );
+        <div>
+          <h2>{ads.title}</h2>
+        </div>
+      )
     }
   }
 
