@@ -1,7 +1,6 @@
 import * as request from 'superagent'
 const baseUrl = 'http://localhost:4001'
 
-
 export const FETCH_DETAILED_AD = 'FETCH_DETAILED_AD'
 export const FETCH_ALL_ADS = 'FETCH_ALL_ADS'
 

@@ -2,6 +2,8 @@ import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {fetchAllAds} from '../actions/ads'
+import {Link} from 'react-router-dom'
+
 
 
 
@@ -39,7 +41,7 @@ class AdsList extends PureComponent {
           <tbody>
             { ads.map(ad => (<tr key={ad.id}>
               <td>{ad.id}</td>
-              <td>{ad.title}</td>
+              <td><Link to={ `/ads/${ad.id}` }>{ad.title}</Link></td>              
               <td>&euro; {ad.price}.00</td>
             </tr>)) }
           </tbody>
