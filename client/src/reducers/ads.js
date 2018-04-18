@@ -2,12 +2,12 @@
 const ads = [
     {
       id: 1,
-      title: 'Ad1',
+      title: 'AdvertisementwithID1',
       price: 123
     },
     {
       id: 5,
-      title: 'Ad2',
+      title: 'AdvertisementwithID5',
       price: 1000
     }
   ]

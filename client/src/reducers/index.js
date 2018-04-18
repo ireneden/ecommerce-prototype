@@ -1,6 +1,6 @@
-import { combineReducers } from 'redux'
+// import { combineReducers } from 'redux'
 import ads from './ads'
 
-export default ({
+export default {
   ads
-})
+}

@@ -3,29 +3,31 @@ import logo from './logo.svg';
 import './App.css';
 import AdDetails from './containers/AdDetails'
 import AdsList from './containers/AdsList'
-// import {connect} from 'react-redux'
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 
-
-const ads = [
-  {
-    id: 1,
-    title: 'Ad1',
-    price: 123
-  },
-  {
-    id: 5,
-    title: 'Ad2',
-    price: 1000
-  }
-]
+// const ads = [
+//   {
+//     id: 1,
+//     title: 'Advertisement1',
+//     price: 123
+//   },
+//   {
+//     id: 5,
+//     title: 'Advertisement5',
+//     price: 1000
+//   }
+// ]
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <AdsList />
-        <AdDetails ads={ ads[0] } />
-      </div>
+      <Router>
+        <div>
+          <Route exact path="/ads" component={AdsList} />
+          <Route exact path="/ads/:id" component={AdDetails} />
+          <Route exact path="/" render={ () => <Redirect to="/ads" /> } />
+        </div>
+      </Router>
     )
   }
 }
@@ -36,5 +38,4 @@ const mapStateToProps = function (state) {
   }
 }
 
-// export default connect(mapStateToProps)(AdsList)
 export default App;

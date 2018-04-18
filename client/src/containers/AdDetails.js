@@ -1,16 +1,24 @@
 import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
+import {connect} from 'react-redux'
 
 
 class AdDetails extends PureComponent {
     render() {
-      const {ads} = this.props
+      const {ad} = this.props
       return (
         <div>
-          <h2>{ads.title}</h2>
+           <h1>{ad.title}</h1>
         </div>
       )
     }
   }
 
-export default AdDetails
+
+const mapStateToProps = function (state, props) {
+  return {
+    ad: state.ads.find(ad => ad.id === Number(props.match.params.id))
+  }
+}
+
+export default connect(mapStateToProps)(AdDetails)
