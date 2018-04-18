@@ -1,6 +1,10 @@
 const express = require('express')
+const bodyParser = require('body-parser')
+
 
 const app = express()
+app.use(bodyParser.json())
+
 
 var Sequelize = require('sequelize')
 var sequelize = new Sequelize('postgres://postgres:secret@localhost:5432/postgres')
@@ -43,13 +47,13 @@ app.use(function(request, response, next) {
     
 
 
-    app.get('/ad', (request, response) => {
+    app.get('/ads', (request, response) => {
         Ad.findAll({
           attributes: ['id', 'title', 'price', 'description', 'image', 'email', 'phone']
         })
           .then(result => {
             response.send({
-                ad: result
+                ads: result
             })
           })
           .catch(error => {
@@ -58,7 +62,7 @@ app.use(function(request, response, next) {
     })
 
 
-    app.get('/ad/:id', (request, response) => {
+    app.get('/ads/:id', (request, response) => {
         const adId = request.params.id
         Ad.findById(adId)
           .then(result => {
@@ -74,3 +78,14 @@ app.use(function(request, response, next) {
           })
     })
     
+
+    app.post('/ads', (request, response) => {
+        const ad = request.body
+        console.log(ad)
+        Ad.create(ad).then(entity => {
+            response.status(201).send(entity)
+        })
+      })
+
+      //test with: http post :4001/ads name="New Ad test" price=5 description="Whatever" image="dhsjf" email="clacla@djdj.com" phone="2223"
+
