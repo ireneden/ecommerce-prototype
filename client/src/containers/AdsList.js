@@ -38,14 +38,12 @@ class AdsList extends PureComponent {
         <table>
           <thead>
             <tr>
-              <th>#</th>
               <th>Title</th>
               <th>Price</th>
             </tr>
           </thead>
           <tbody>
             { ads.map(ad => (<tr key={ad.id}>
-              <td>{ad.id}</td>
               <td><Link to={ `/ads/${ad.id}` }>{ad.title}</Link></td>              
               <td>&euro; {ad.price}.00</td>
             </tr>)) }

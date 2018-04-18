@@ -31,6 +31,9 @@ export const createAd = (ad) => (dispatch) => {
     request
       .post(`${baseUrl}/ads`)
       .send(ad)
-      .then(response => alert(JSON.stringify(response.body)))
+      .then(response => dispatch({
+        type: CREATE_AD,
+        payload: response.body
+      }))
   }
 
