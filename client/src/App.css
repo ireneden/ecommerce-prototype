@@ -3,6 +3,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  background-image: url(https://png.pngtree.com/thumb_back/fw800/back_pic/04/52/41/06585fd11a1bc16.jpg);
 }
 
 .Adimage {
@@ -18,15 +19,42 @@ body {
 }
 
 .AdsForm button {
-  background-color: blue;
-  color: #fff;
-  padding: 10px 20px;
+  background-color: hsl(130, 71%, 75%);
+  color: #333;
+  padding: 10px 178px;
   border-radius: 10px;
-  margin-top: 10px;
+  margin-top: 20px;
+  font-size: 15px;
+  border-color:hsl(130, 71%, 75%);
 }
 
 .FormandTitle {
   border: 2px solid #333;
   padding: 20px;
   margin-bottom: 30px;
+  margin-top: 30px;
+  border-radius: 10px;
+  background-color: #333;
+  color: white;
+}
+
+.form-style-3{
+  max-width: 450px;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+.form-style-3 label {
+  display: block;
+  margin-bottom: 10px;
+  max-width: auto;
+}
+
+input {
+  width: 400px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+label {
+  margin-bottom: 10px;
+  margin-top: 10px;
 }

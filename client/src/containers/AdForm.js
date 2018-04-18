@@ -18,7 +18,7 @@ class AdForm extends PureComponent {
 
 	render() {
 		return (
-			<form onSubmit={this.handleSubmit}>
+			<form onSubmit={this.handleSubmit} className = "form-style-3">
 				<div ClassName = "AddAdForm">
 					<label htmlFor="title">Title: </label>
 					<input name="title" id="title" value={
