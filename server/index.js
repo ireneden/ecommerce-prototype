@@ -1,10 +1,8 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 
-
 const app = express()
 app.use(bodyParser.json())
-
 
 var Sequelize = require('sequelize')
 var sequelize = new Sequelize('postgres://postgres:secret@localhost:5432/postgres')
@@ -87,5 +85,6 @@ app.use(function(request, response, next) {
         })
       })
 
-      //test with: http post :4001/ads name="New Ad test" price=5 description="Whatever" image="dhsjf" email="clacla@djdj.com" phone="2223"
+      //test with: http post :4001/ads title="New Ad test" price=5 description="Whatever" image="dhsjf" email="clacla@djdj.com" phone="2223"
 
+      

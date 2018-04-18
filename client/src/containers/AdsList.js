@@ -1,8 +1,9 @@
 import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
-import {fetchAllAds} from '../actions/ads'
+import {fetchAllAds, createAd} from '../actions/ads'
 import {Link} from 'react-router-dom'
+import AdForm from './AdForm'
 
 
 
@@ -18,6 +19,10 @@ class AdsList extends PureComponent {
       email: PropTypes.string.isRequired,
       phone: PropTypes.number.isRequired
     })).isRequired
+  }
+
+  createAd = (ad) => {
+    this.props.createAd(ad)
   }
 
   componentWillMount() {
@@ -46,6 +51,8 @@ class AdsList extends PureComponent {
             </tr>)) }
           </tbody>
 				</table>
+        <h1>Create a new advertisement</h1>
+        <AdForm onSubmit={this.createAd} />
       </div>
     )
   }
@@ -57,4 +64,4 @@ const mapStateToProps = function (state) {
   }
 }
 
-export default connect(mapStateToProps, { fetchAllAds })(AdsList)
+export default connect(mapStateToProps, { fetchAllAds, createAd })(AdsList)

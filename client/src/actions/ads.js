@@ -3,6 +3,8 @@ const baseUrl = 'http://localhost:4001'
 
 export const FETCH_DETAILED_AD = 'FETCH_DETAILED_AD'
 export const FETCH_ALL_ADS = 'FETCH_ALL_ADS'
+export const CREATE_AD = 'CREATE_AD'
+
 
 export const fetchAd = (adId) => (dispatch) => {
   request
@@ -25,5 +27,10 @@ export const fetchAllAds = () => (dispatch) => {
 }
 
 
-
+export const createAd = (ad) => (dispatch) => {
+    request
+      .post(`${baseUrl}/ads`)
+      .send(ad)
+      .then(response => alert(JSON.stringify(response.body)))
+  }
 
