@@ -32,10 +32,10 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = function (state) {
-  return {
-    ads: state.ads
-  }
-}
+// const mapStateToProps = function (state) {
+//   return {
+//     ads: state.ads
+//   }
+// }
 
 export default App;

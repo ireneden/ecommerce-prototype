@@ -1,6 +1,8 @@
 import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
+import {fetchAllAds} from '../actions/ads'
+
 
 
 class AdsList extends PureComponent {
@@ -14,6 +16,10 @@ class AdsList extends PureComponent {
       email: PropTypes.string.isRequired,
       phone: PropTypes.number.isRequired
     })).isRequired
+  }
+
+  componentWillMount() {
+    this.props.fetchAllAds()
   }
 
   render() {
@@ -49,4 +55,4 @@ const mapStateToProps = function (state) {
   }
 }
 
-export default connect(mapStateToProps)(AdsList)
+export default connect(mapStateToProps, { fetchAllAds })(AdsList)
