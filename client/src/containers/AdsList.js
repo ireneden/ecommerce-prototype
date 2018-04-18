@@ -37,20 +37,26 @@ class AdsList extends PureComponent {
 
         <table>
           <thead>
-            <tr>
+            <tr className="HomeTitles">
               <th>Title</th>
               <th>Price</th>
+              <th>Image</th>
             </tr>
           </thead>
           <tbody>
             { ads.map(ad => (<tr key={ad.id}>
               <td><Link to={ `/ads/${ad.id}` }>{ad.title}</Link></td>              
               <td>&euro; {ad.price}.00</td>
+              <td>{<img src = { ad.image } className="Adimage"/>}</td> 
             </tr>)) }
           </tbody>
 				</table>
+        <div className="FormandTitle">
         <h1>Create a new advertisement</h1>
+        <div className="AdsForm">
         <AdForm onSubmit={this.createAd} />
+        </div>
+        </div>
       </div>
     )
   }

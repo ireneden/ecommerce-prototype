@@ -15,7 +15,7 @@ class AdDetails extends PureComponent {
       const {ad} = this.props
       if (!ad) return null
       return (
-        <div>
+        <div className="ProductTitles">
            <h1>Advertised product: {ad.title}</h1>
            <h2>Price: {ad.price} €</h2>
            <h3>Description: {ad.description}</h3>
